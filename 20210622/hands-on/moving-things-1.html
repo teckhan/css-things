@@ -1,0 +1,86 @@
+<div style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; align-items: center;">
+    <button class="gray" onclick="history.back()">Back</button>
+    <h2>Fancy avatar card</h2>
+</div>
+
+<section class="parent">
+    <div class="box"></div>
+
+    <div class="card" style="--offset-top: 2rem; margin-top: var(--offset-top); padding: 1rem">
+        <img src="../assets/images/avatar.svg" alt="avatar" style="margin-top: calc(-1 * var(--offset-top));"  />
+        <div style="margin-top: .5rem">some name</div>
+    </div>
+</section>
+
+<hr />
+
+<section>
+    <h3>Position & inset</h3>
+
+    <section class="parent">
+        <div class="box"></div>
+    
+        <div class="card">
+            <img src="../assets/images/avatar.svg" alt="avatar" />
+            <div>some name</div>
+        </div>
+    </section>
+
+    <section>
+        <!--
+            1. add padding and margin to .card
+            2. add space between avatar & name
+            3. make img absolute position to take physical form out of context
+            4. but make sure parent is relative to constraint
+            5. extra adjustment to .card padding and space between avatar & name
+        -->
+    </section>
+</section>
+
+<section>
+    <h3>Negative Margin</h3>
+
+    <section class="parent">
+        <div class="box"></div>
+    
+        <div class="card">
+            <img src="../assets/images/avatar.svg" alt="avatar" />
+            <div>some name</div>
+        </div>
+    </section>
+
+    <section>
+        <!--
+            1. add padding and margin to .card
+            2. add space between avatar & name
+            3. give img negative margin-top to take physical form out of context
+            4. add extra margin-top to .card
+        -->
+    </section>
+</section>
+
+<style>
+    .box {
+        width: 5rem;
+        height: 5rem;
+        background-color: var(--color-secondary);
+        border-radius: .5rem;
+    }
+
+    .parent {
+        display: inline-block;
+        padding: 2rem;
+        outline: 1px solid;
+    }
+    .card {
+        display: inline-block;
+        border-radius: .5rem;
+        box-shadow: 0 8px 28px -6px var(--color-secondary);
+        border: 1px solid var(--color-primary);
+    }
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine-ie11.min.js" integrity="sha512-Atu8sttM7mNNMon28+GHxLdz4Xo2APm1WVHwiLW9gW4bmHpHc/E2IbXrj98SmefTmbqbUTOztKl5PDPiu0LD/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<link rel="stylesheet" href="../style.css">

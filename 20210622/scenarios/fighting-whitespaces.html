@@ -1,0 +1,196 @@
+<div style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; align-items: center;">
+    <button class="gray" onclick="history.back()">Back</button>
+    <h2>Fighting Whitespaces</h2>
+</div>
+
+<section>
+<pre><code><!--    
+-->&#x3c;&#x64;&#x69;&#x76;&#x20;&#x63;&#x6c;&#x61;&#x73;&#x73;&#x3d;&#x22;&#x70;&#x61;&#x72;&#x65;&#x6e;&#x74;&#x22;&#x3e;&#xa;&#x20;&#x20;&#x20;&#x20;&#x3c;&#x64;&#x69;&#x76;&#x3e;&#x3c;&#x2f;&#x64;&#x69;&#x76;&#x3e;&#xa;&#x20;&#x20;&#x20;&#x20;&#x3c;&#x64;&#x69;&#x76;&#x3e;&#x3c;&#x2f;&#x64;&#x69;&#x76;&#x3e;&#xa;&#x20;&#x20;&#x20;&#x20;&#x3c;&#x64;&#x69;&#x76;&#x3e;&#x3c;&#x2f;&#x64;&#x69;&#x76;&#x3e;&#xa;&#x20;&#x20;&#x20;&#x20;&#x3c;&#x64;&#x69;&#x76;&#x3e;&#x3c;&#x2f;&#x64;&#x69;&#x76;&#x3e;&#xa;&#x20;&#x20;&#x20;&#x20;&#x3c;&#x64;&#x69;&#x76;&#x3e;&#x3c;&#x2f;&#x64;&#x69;&#x76;&#x3e;&#xa;&#x3c;&#x2f;&#x64;&#x69;&#x76;&#x3e;
+</code></pre>
+    <div class="parent">
+        <div style="width: 7rem;"></div>
+        <div></div>
+        <div style="width: 30rem"></div>
+        <div style="width: 8rem"></div>
+        <div style="width: 15rem"></div>
+        <div style="width: 5rem"></div>
+        <div></div>
+    </div>
+
+    <!--
+        inline elements respect whitespaces in html markup
+        flex & grid ignore whitespaces between html markup
+    -->
+</section>
+
+<hr/>
+
+<details>
+    <summary><h3>1. html: remove gap between end tag and start tag</h3></summary>
+
+<pre><code><!--    
+-->&#x3c;&#x64;&#x69;&#x76;&#x20;&#x63;&#x6c;&#x61;&#x73;&#x73;&#x3d;&#x22;&#x70;&#x61;&#x72;&#x65;&#x6e;&#x74;&#x22;&#x3e;&#xa;&#x20;&#x20;&#x20;&#x20;&#x3c;&#x64;&#x69;&#x76;&#x3e;&#x3c;&#x2f;&#x64;&#x69;&#x76;&#x3e;&#x3c;&#x64;&#x69;&#x76;&#x3e;&#xa;&#x20;&#x20;&#x20;&#x20;&#x3c;&#x2f;&#x64;&#x69;&#x76;&#x3e;&#x3c;&#x64;&#x69;&#x76;&#x3e;&#xa;&#x20;&#x20;&#x20;&#x20;&#x3c;&#x2f;&#x64;&#x69;&#x76;&#x3e;&#x3c;&#x64;&#x69;&#x76;&#x3e;&#xa;&#x20;&#x20;&#x20;&#x20;&#x3c;&#x2f;&#x64;&#x69;&#x76;&#x3e;&#x3c;&#x64;&#x69;&#x76;&#x3e;&#xa;&#x20;&#x20;&#x20;&#x20;&#x3c;&#x2f;&#x64;&#x69;&#x76;&#x3e;&#xa;&#x3c;&#x2f;&#x64;&#x69;&#x76;&#x3e;
+</code></pre>
+    <div class="parent primary">
+        <div style="width: 7rem;"></div><div>
+        </div><div style="width: 30rem">
+        </div><div style="width: 8rem">
+        </div><div style="width: 15rem">
+        </div><div style="width: 5rem">
+        </div><div>
+        </div>
+    </div>
+</details>
+
+<details>
+    <summary><h3>2. html: use comments to remove gap between end tag and start tag</h3></summary>
+
+<pre><code><!--    
+-->&#x3c;&#x64;&#x69;&#x76;&#x20;&#x63;&#x6c;&#x61;&#x73;&#x73;&#x3d;&#x22;&#x70;&#x61;&#x72;&#x65;&#x6e;&#x74;&#x22;&#x3e;&#xa;&#x20;&#x20;&#x20;&#x20;&#x3c;&#x64;&#x69;&#x76;&#x3e;&#x3c;&#x2f;&#x64;&#x69;&#x76;&#x3e;&#x3c;&#x21;&#x2d;&#x2d;&#xa;&#x20;&#x20;&#x20;&#x20;&#x2d;&#x2d;&#x3e;&#x3c;&#x64;&#x69;&#x76;&#x3e;&#x3c;&#x2f;&#x64;&#x69;&#x76;&#x3e;&#x3c;&#x21;&#x2d;&#x2d;&#xa;&#x20;&#x20;&#x20;&#x20;&#x2d;&#x2d;&#x3e;&#x3c;&#x64;&#x69;&#x76;&#x3e;&#x3c;&#x2f;&#x64;&#x69;&#x76;&#x3e;&#x3c;&#x21;&#x2d;&#x2d;&#xa;&#x20;&#x20;&#x20;&#x20;&#x2d;&#x2d;&#x3e;&#x3c;&#x64;&#x69;&#x76;&#x3e;&#x3c;&#x2f;&#x64;&#x69;&#x76;&#x3e;&#x3c;&#x21;&#x2d;&#x2d;&#xa;&#x20;&#x20;&#x20;&#x20;&#x2d;&#x2d;&#x3e;&#x3c;&#x64;&#x69;&#x76;&#x3e;&#x3c;&#x2f;&#x64;&#x69;&#x76;&#x3e;&#xa;&#x3c;&#x2f;&#x64;&#x69;&#x76;&#x3e;
+</code></pre>
+    <div class="parent">
+        <div style="width: 7rem;"></div><!--
+        --><div></div><!--
+        --><div style="width: 30rem"></div><!--
+        --><div style="width: 8rem"></div><!--
+        --><div style="width: 15rem"></div><!--
+        --><div style="width: 5rem"></div><!--
+        --><div></div>
+    </div>
+</details>
+
+<details>
+    <summary><h3>3. css: font-size 0 on parent and resume font-size on children</h3></summary>
+
+<pre><code><!--    
+--><span style="color: #72e0d1">.no-whitespaces</span> {
+    <span style="color: white">font-size</span>: <span>0</span>;
+}
+<span style="color: #72e0d1">.no-whitespaces > *</span> {
+    <span style="color: white">font-size</span>: <span>16px</span>;
+}
+</code></pre>
+    <div class="parent primary no-whitespaces">
+        <div style="width: 7rem;"></div>
+        <div></div>
+        <div style="width: 30rem"></div>
+        <div style="width: 8rem"></div>
+        <div style="width: 15rem"></div>
+        <div style="width: 5rem"></div>
+        <div></div>
+    </div>
+
+    <style>
+        .no-whitespaces {
+            font-size: 0;
+        }
+        .no-whitespaces > * {
+            font-size: 16px;
+        }
+    </style>
+</details>
+
+<details>
+    <summary><h3>4. css: negative margins (kinda worked)</h3></summary>
+
+<pre><code><!--    
+--><span style="color: #72e0d1">.negative-margin</span> {
+    <span style="color: white">margin-right</span>: <span>-4px</span>;
+    <span style="color: white">margin-bottom</span>: <span>-4px</span>;
+}
+</code></pre>
+    <div class="parent negative-margin">
+        <div style="width: 7rem;"></div>
+        <div></div>
+        <div style="width: 30rem"></div>
+        <div style="width: 8rem"></div>
+        <div style="width: 15rem"></div>
+        <div style="width: 5rem"></div>
+        <div></div>
+    </div>
+
+    <style>
+        .negative-margin > * {
+            margin-right: -4px;
+            margin-bottom: -4px;
+        }
+    </style>
+</details>
+
+<details>
+    <summary><h3>5. css: float (just don't do this)</h3></summary>
+
+<pre><code><!--    
+--><span style="color: #72e0d1">.float > *</span> {
+    <span style="color: white">float</span>: <span>left</span>;
+}
+</code></pre>
+    <div class="parent primary float">
+        <div style="width: 7rem;"></div>
+        <div></div>
+        <div style="width: 30rem"></div>
+        <div style="width: 8rem"></div>
+        <div style="width: 15rem"></div>
+        <div style="width: 5rem"></div>
+        <div></div>
+    </div>
+
+    <style>
+        .float > * {
+            float: left;
+        }
+    </style>
+</details>
+
+<details>
+    <summary><h3>6. css: flex / grid 👍🏽</h3></summary>
+
+<pre><code><!--    
+--><span style="color: #72e0d1">.flex</span> {
+    <span style="color: white">display</span>: <span>flex</span>;
+    <span style="color: white">flex-wrap</span>: <span>wrap</span>;
+}
+</code></pre>
+    <div class="parent flex">
+        <div style="width: 7rem;"></div>
+        <div></div>
+        <div style="width: 30rem"></div>
+        <div style="width: 8rem"></div>
+        <div style="width: 15rem"></div>
+        <div style="width: 5rem"></div>
+        <div></div>
+    </div>
+
+    <style>
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</details>
+
+
+<style>
+    h3 {
+        display: inline-block;
+    }
+
+    .parent {
+        overflow-x: auto;
+        outline: 1px solid;
+    }
+
+    .parent > * {
+        display: inline-block;
+        width: 20rem;
+        height: 6.7rem;
+        border-radius: .5rem;
+        border: 1px solid var(--color-secondary);
+    }
+
+    .parent.primary > * {
+        border: 1px solid var(--color-primary);
+    }
+</style>
+
+<link rel="stylesheet" href="../style.css">

@@ -1,0 +1,92 @@
+<div style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; align-items: center;">
+    <button class="gray" onclick="history.back()">Back</button>
+    <h2>Position</h2>
+</div>
+
+<section x-data="{ position: 'static', top: 'auto', left: 'auto', parentPosition: 'static', parentTransform: 'none', grandparentPosition: 'static', grandparentTransform: 'none' }">
+<pre><code><!--    
+--><span style="color: #72e0d1">.box</span> {
+    <span style="color: gray">/* default = static */</span>
+    <span style="color: white">position</span>: <span x-text="position"></span>;
+    <span style="color: gray">/* default = auto */</span>
+    <span style="color: white">top</span>: <span x-text="top"></span>;
+    <span style="color: white">left</span>: <span x-text="left"></span>;
+    <span style="color: white">right</span>: <span>auto</span>;
+    <span style="color: white">bottom</span>: <span>auto</span>;
+}
+</code></pre>
+    
+    
+    <div class="grandparent parent" :style="`position: ${grandparentPosition}; transform: ${grandparentTransform}`">
+        grand parent
+        <div class="parent" :style="`position: ${parentPosition}; transform: ${parentTransform}`">
+            parent
+            <br />
+            <div class="box padding" :style="`position: ${position}; top: ${top}; left: ${left}`" x-text="`${position}`"></div>
+
+            <section style="height: 50vh; background-color: lightgray"></section>
+        </div>
+    </div>
+
+    <p></p>
+    <button x-on:click="position = 'static'">static</button>
+    <button x-on:click="position = 'relative'">relative</button>
+    <button x-on:click="position = 'absolute'">absolute</button>
+    <button x-on:click="position = 'fixed'">fixed</button>
+    <button x-on:click="position = 'sticky'">sticky</button>
+    <p></p>
+    <button x-on:click="top = 'auto'">top: auto</button>
+    <button x-on:click="top = 0">top: 0</button>
+    <button x-on:click="top = '3rem'">top: 3rem</button>
+    <p></p>
+    <button x-on:click="left = 'auto'">left: auto</button>
+    <button x-on:click="left = 0">left: 0</button>
+    <button x-on:click="left = '3rem'">left: 3rem</button>
+    <button x-on:click="left = '-3rem'">left: -3rem</button>
+    <hr/>
+    <button x-on:click="parentPosition = 'static'">static - parent</button>
+    <button x-on:click="parentPosition = 'relative'">relative - parent</button>
+    <p></p>
+    <button x-on:click="grandparentPosition = 'static'">static - grandparent</button>
+    <button x-on:click="grandparentPosition = 'relative'">relative - grandparent</button>
+    <p></p>
+    <button x-on:click="parentTransform = 'none'">transform: none - parent</button>
+    <button x-on:click="parentTransform = 'translate(0)'">transform: translateZ(0) - parent</button>
+    <p></p>
+    <button x-on:click="grandparentTransform = 'none'">transform: none - grandparent</button>
+    <button x-on:click="grandparentTransform = 'translate(0)'">transform: translateZ(0) - grandparent</button>
+
+
+</section>
+
+<hr />
+
+<section style="height: 50vh; background-color: lightgray"></section>
+
+<hr />
+
+<style>
+    .grandparent {
+        overflow-y: auto;
+        max-height: 50vh;
+        /* transform: translateZ(0); https://achrafkassioui.com/blog/position-fixed-and-CSS-transforms/ */
+    }
+
+    .parent {
+        padding: 0 1rem 1rem 1rem;
+        outline: 1px solid black;
+    }
+
+    .box {
+        display: inline-block;
+        height: 10rem;
+        width: 10rem;
+        background-color: var(--color-secondary);
+        border-radius: .5rem;
+    }
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine-ie11.min.js" integrity="sha512-Atu8sttM7mNNMon28+GHxLdz4Xo2APm1WVHwiLW9gW4bmHpHc/E2IbXrj98SmefTmbqbUTOztKl5PDPiu0LD/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<link rel="stylesheet" href="../style.css">

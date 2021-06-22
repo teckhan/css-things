@@ -1,0 +1,77 @@
+<div style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; align-items: center;">
+    <button class="gray" onclick="history.back()">Back</button>
+    <h2>Syntax</h2>
+</div>
+
+<section x-data="{ selector: 'selector', property: 'property', value: 'value' }">
+<pre><code><!--    
+--><span x-text="selector" style="color: #72e0d1"></span> {
+    <span x-text="property" style="color: white"></span>: <span x-text="value"></span>;
+    <span style="color: gray">/* comments has no effect on final render */</span>
+    <span style="color: gray">/* and can be multiline
+    as shown here */</span>
+    <span style="color: gray">/* 
+                 __//
+        meow~  /.__.\
+               \ \/ /
+            '__/    \
+             \-      )
+              \_____/
+           _____|_|____
+                " "    
+    */</span>
+}
+</code></pre>
+    
+    <article>
+        <h3>Selector [<a href="https://www.w3schools.com/cssref/css_selectors.asp">Reference</a>]</h3>
+
+        <button x-on:click="selector = 'div'">tag</button>
+        <button x-on:click="selector = '#some-id'">id</button>
+        <button x-on:click="selector = '.some-class'">class</button>
+        <button x-on:click="selector = '[href]'">attribute</button>
+        <button x-on:click="selector = '*'">wild card</button>
+        <p></p>
+        <button x-on:click="selector = 'div.some-class#some-id[href]'">chain specificity</button>
+        <button x-on:click="selector = 'div, button, h3, p'">multiple selector</button>
+        <p></p>
+        <button x-on:click="selector = 'div button'">children selector</button>
+        <button x-on:click="selector = 'div > button'">direct children selector</button>
+        <button x-on:click="selector = 'h3 + button'">next sibling selector</button>
+        <button x-on:click="selector = 'p ~ button'">next and subsequent sibling selector</button>
+        <p></p>
+        <button x-on:click="selector = 'div:before'">pseudo element before</button>
+        <button x-on:click="selector = 'div:after'">pseudo element after</button>
+        <button x-on:click="selector = 'div:not(.some-class)'">not</button>
+        <button x-on:click="selector = 'div:nth-child(3)'">specific child</button>
+        <button x-on:click="selector = 'button:active'">button pressed</button>
+        <p></p>
+        <button x-on:click="selector = '[href=&quot;https://www.google.com&quot;]'">attribute value equals to</button>
+        <button x-on:click="selector = '[href^=&quot;https://&quot;]'">attribute value begins with</button>
+    </article>
+
+    <article>
+        <h3>Property [<a href="https://www.w3schools.com/cssref/">Reference</a>]</h3>
+
+        <button x-on:click="property = 'position'">position</button>
+        <button x-on:click="property = 'display'">display</button>
+        <button x-on:click="property = 'margin'">margin</button>
+        <button x-on:click="property = 'width'">width</button>
+        <button x-on:click="property = 'background-color'">background color</button>
+        <button x-on:click="property = 'color'">text color</button>
+        <button x-on:click="property = 'text-decoration'">underline, bold, italics</button>
+    </article>
+    <article>
+        <h3>Value</h3>
+
+        <button x-on:click="value = 'fixed'">position</button>
+        <button x-on:click="value = '16px'">unit</button>
+        <button x-on:click="value = 'yellow'">color</button>
+        <button x-on:click="value = 'bold'">font weight</button>
+        <button x-on:click="value = 'underline'">underline text</button>
+    </article>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine-ie11.min.js" integrity="sha512-Atu8sttM7mNNMon28+GHxLdz4Xo2APm1WVHwiLW9gW4bmHpHc/E2IbXrj98SmefTmbqbUTOztKl5PDPiu0LD/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<link rel="stylesheet" href="../style.css">

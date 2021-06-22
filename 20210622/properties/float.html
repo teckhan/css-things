@@ -1,0 +1,47 @@
+<div style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; align-items: center;">
+    <button class="gray" onclick="history.back()">Back</button>
+    <h2>Float</h2>
+</div>
+
+<section x-data="{ float: 'none' }">
+<pre><code><!--    
+--><span style="color: #72e0d1">.box</span> {
+    <span style="color: gray">/* default = none */</span>
+    <span style="color: white">float</span>: <span x-text="float"></span>;
+}
+</code></pre>
+    
+    <div class="parent">
+        <div class="box" :style="`float: ${float}`" x-text="`${float}`"></div>
+        <section style="height: 10rem; background-color: lightgray"></section>
+    </div>
+    <p></p>
+    <div class="parent">
+        <div class="box" :style="`float: ${float}`" x-text="`${float}`"></div>
+        <section style="background-color: lightgray">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error accusamus voluptatum fuga sit? Debitis at tempore qui fugiat obcaecati quos eius alias ea! Hic repellendus tempore non, ipsam, perspiciatis reprehenderit, voluptatum quia assumenda architecto veniam doloremque! Sapiente porro nobis tempora aliquam, quis aut cumque, amet perspiciatis voluptate animi eum excepturi obcaecati quod ullam itaque accusamus fugiat? Eligendi et voluptatem cum numquam, consectetur illum dignissimos fugiat itaque quis fuga id, quae recusandae quas perferendis optio esse omnis. Natus enim non commodi pariatur adipisci, fuga vitae nesciunt nulla placeat culpa molestiae ipsum voluptates! Vitae, nobis! Aliquam excepturi, voluptatem exercitationem maiores iure voluptate numquam nesciunt tempora laboriosam illum! Nobis, corrupti. At tempora alias pariatur rerum ut, quasi recusandae praesentium nostrum nihil, vel blanditiis ullam voluptatum? Minima voluptatum tenetur, nulla adipisci suscipit quas tempore voluptatibus corporis dolor harum aliquid libero ea repudiandae. Repellat totam soluta, officia provident aliquid iure praesentium maiores assumenda nostrum. Exercitationem praesentium fugiat libero aut laudantium at quas consequatur dolorem hic reiciendis vero assumenda quia, veritatis tenetur minima quam in adipisci blanditiis! Distinctio unde, dignissimos, repellendus in itaque ducimus nostrum incidunt sit quod pariatur quasi neque quidem corrupti adipisci animi, doloremque quas consequuntur? Id quibusdam accusamus atque earum aliquam quidem facilis quod tenetur nesciunt, ullam sit suscipit inventore minima, ipsa dignissimos hic maiores nemo sunt magnam architecto explicabo nam cum? Qui dignissimos voluptas accusantium dicta, harum repellendus odio cum quam esse consectetur nisi, exercitationem, perspiciatis nesciunt eos eum? Sed tempora similique provident reiciendis hic quis? Rem quia odit quidem ipsum quisquam ratione ipsam, iusto illum reprehenderit in, harum asperiores possimus dolore fugit aperiam praesentium itaque eveniet ex maiores earum magnam dolorem eligendi totam. Adipisci perferendis fuga, optio dignissimos nisi accusamus sequi debitis dolorem qui corporis quisquam alias at saepe sit voluptatum magni ullam fugiat, dolorum magnam autem voluptate? Numquam, ea at!</section>
+    </div>
+
+    <p></p>
+    <button x-on:click="float = 'none'">none</button>
+    <button x-on:click="float = 'left'">left</button>
+    <button x-on:click="float = 'right'">right</button>
+</section>
+
+<style>
+    .parent {
+        outline: 1px solid black;
+    }
+
+    .box {
+        display: inline-block;
+        height: 10rem;
+        width: 10rem;
+        background-color: var(--color-secondary);
+        border-radius: .5rem;
+    }
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine-ie11.min.js" integrity="sha512-Atu8sttM7mNNMon28+GHxLdz4Xo2APm1WVHwiLW9gW4bmHpHc/E2IbXrj98SmefTmbqbUTOztKl5PDPiu0LD/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<link rel="stylesheet" href="../style.css">

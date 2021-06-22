@@ -1,0 +1,118 @@
+<div style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; align-items: center;">
+    <button class="gray" onclick="history.back()">Back</button>
+    <h2>Notification badge</h2>
+</div>
+
+<section class="parent">
+    <div class="button">
+        <div class="img-wrapper" style="position: relative">
+            <div class="dot" style="position: absolute; top: -4px; right: -4px"></div>
+            <img src="../assets/images/icon-chat.svg" alt="chat icon" />
+        </div>
+    </div>
+</section>
+
+<hr />
+
+<section>
+    <h3>Position & inset</h3>
+
+    <section class="parent">
+        <div class="button">
+            <div class="img-wrapper">
+                <div class="dot"></div>
+                <img src="../assets/images/icon-chat.svg" alt="chat icon" />
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <!--
+            1. make .img-wrapper absolute position to take physical form out of context
+            2. but make sure parent is relative to constraint
+            3. adjust inset
+        -->
+    </section>
+</section>
+
+<section>
+    <h3>Negative Margin</h3>
+
+    <section class="parent">
+        <div class="button">
+            <div class="img-wrapper">
+                <div class="dot"></div>
+                <img src="../assets/images/icon-chat.svg" alt="chat icon" />
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <!--
+            1. add margin-left auto to push the elements to the right
+            2. add negative margin top, right, & bottom -4px to take physical form out of context
+            3. give position relative so it comes before the icon
+        -->
+    </section>
+</section>
+
+<section>
+    <h3>Combine position & inset with pseudo element</h3>
+
+    <section class="parent">
+        <div class="button">
+            <div class="img-wrapper dot-wrapper">
+                <img src="../assets/images/icon-chat.svg" alt="chat icon" />
+            </div>
+        </div>
+    </section>
+</section>
+
+<section>
+    <h3>Combine negative margin with pseudo element</h3>
+
+    <section class="parent">
+        <div class="button">
+            <div class="img-wrapper dot-wrapper">
+                <img src="../assets/images/icon-chat.svg" alt="chat icon" />
+            </div>
+        </div>
+    </section>
+</section>
+
+<style>
+    .parent {
+        display: inline-block;
+        padding: 1rem;
+        outline: 1px solid;
+    }
+
+    .button {
+        padding: 1rem;
+        cursor: pointer;
+        border-radius: .5rem;
+        box-shadow: 0 8px 28px -6px var(--color-secondary);
+        border: 1px solid var(--color-primary);
+    }
+
+    .button:hover {
+        transform: scale(1.05)
+    }
+
+    .dot, .dot-wrapper:before {
+        width: 8px;
+        height: 8px;
+        background-color: red;
+        border-radius: 50%;
+    }
+
+    .dot-wrapper:before {
+        content: '';
+        display: block;
+    }
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine-ie11.min.js" integrity="sha512-Atu8sttM7mNNMon28+GHxLdz4Xo2APm1WVHwiLW9gW4bmHpHc/E2IbXrj98SmefTmbqbUTOztKl5PDPiu0LD/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<link rel="stylesheet" href="../style.css">

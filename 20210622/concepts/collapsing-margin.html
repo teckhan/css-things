@@ -1,0 +1,72 @@
+<div style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; align-items: center;">
+    <button class="gray" onclick="history.back()">Back</button>
+    <h2>Collapsing Margin</h2>
+</div>
+
+<section>
+    <h3>Block level elements</h3>
+
+    <div class="parent">
+        <div class="wrapper">
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </div>
+</section>
+
+<hr/>
+
+<section>
+    <h3>Flex</h3>
+
+    <div class="parent">
+        <div class="wrapper flex">
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </div>
+</section>
+
+<hr/>
+
+<section>
+    <h3>Grid</h3>
+
+    <div class="parent">
+        <div class="wrapper grid">
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    .parent {
+        display: inline-block;
+        outline: 1px solid;
+    }
+
+    .wrapper > * {
+        width: 5rem;
+        height: 5rem;
+        margin: 1rem;
+        border-radius: .5rem;
+        background-color: var(--color-secondary);
+    }
+
+    .wrapper.flex {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .wrapper.flex > * {
+        background-color: var(--color-primary);
+    }
+
+    .wrapper.grid {
+        display: grid;
+    }
+</style>
+
+<link rel="stylesheet" href="../style.css">

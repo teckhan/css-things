@@ -1,0 +1,51 @@
+<div style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; align-items: center;">
+    <button class="gray" onclick="history.back()">Back</button>
+    <h2>Box-sizing</h2>
+</div>
+
+<section x-data="{ boxSizing: 'content-box' }">
+<pre><code><!--    
+--><span style="color: #72e0d1">.box</span> {
+    <span style="color: gray">/* default = content-box */</span>
+    <span style="color: white">box-sizing</span>: <span x-text="boxSizing"></span>;
+}
+</code></pre>
+
+    <div class="box">normal box without padding</div>
+    <p></p>
+    <div class="box padding" :style="`box-sizing: ${boxSizing}`" x-text="`${boxSizing} with padding`"></div>
+
+    <p></p>
+    <button x-on:click="boxSizing = 'content-box'">content-box</button>
+    <button x-on:click="boxSizing = 'border-box'">border-box</button>
+</section>
+
+<hr/>
+
+<section>
+    <h3>Tips/Tricks</h3>
+<pre><code><!--    
+--><span style="color: #72e0d1">*, *:before, *:after</span> {
+    <span style="color: white">box-sizing</span>: <span>border-box</span>;
+}
+</code></pre>
+</section>
+
+<style>
+    .box {
+        display: inline-block;
+        height: 10rem;
+        width: 10rem;
+        background-color: var(--color-secondary);
+        border-radius: .5rem;
+    }
+
+    .padding {
+        padding: 1rem;
+    }
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine-ie11.min.js" integrity="sha512-Atu8sttM7mNNMon28+GHxLdz4Xo2APm1WVHwiLW9gW4bmHpHc/E2IbXrj98SmefTmbqbUTOztKl5PDPiu0LD/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<link rel="stylesheet" href="../style.css">

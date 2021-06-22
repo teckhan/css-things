@@ -1,0 +1,61 @@
+<div style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; align-items: center;">
+    <button class="gray" onclick="history.back()">Back</button>
+    <h2>Carousel</h2>
+</div>
+
+<section>
+    <h3>Normal</h3>
+    <div class="parent">
+        <div style="width: 7rem;"></div>
+        <div></div>
+        <div style="width: 30rem"></div>
+        <div style="width: 8rem"></div>
+        <div style="width: 15rem"></div>
+        <div style="width: 5rem"></div>
+        <div></div>
+    </div>
+</section>
+
+<section>
+    <h3>CSS: Scroll Snap</h3>
+    <div class="parent scroll-snap">
+        <div style="width: 7rem;"></div>
+        <div></div>
+        <div style="width: 30rem"></div>
+        <div style="width: 8rem"></div>
+        <div style="width: 15rem"></div>
+        <div style="width: 5rem"></div>
+        <div></div>
+    </div>
+</section>
+
+<style>
+    .parent {
+        display: flex;
+        overflow-x: auto;
+        outline: 1px solid;
+    }
+
+    .parent > * {
+        flex-shrink: 0;
+        margin: .25rem;
+        width: 20rem;
+        height: 6.7rem;
+        border-radius: .5rem;
+        background-color: var(--color-secondary);
+    }
+
+    .parent > *:nth-child(even) {
+        background-color: var(--color-primary);
+    }
+
+    .scroll-snap {
+        scroll-snap-type: x mandatory;
+    }
+
+    .scroll-snap > * {
+        scroll-snap-align: center;
+    }
+</style>
+
+<link rel="stylesheet" href="../style.css">

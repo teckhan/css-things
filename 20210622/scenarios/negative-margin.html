@@ -1,0 +1,71 @@
+<div style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; align-items: center;">
+    <button class="gray" onclick="history.back()">Back</button>
+    <h2>Negative Margin</h2>
+</div>
+
+<section>
+    <h3>De-padding</h3>
+
+    <div style="display: flex">
+        <div class="parent">
+            <h4>SO-20210700000</h4>
+            <article>
+                <h5>Estimated Delivery Date</h5>
+                some text
+            </article>
+            <article>
+                <h5>Estimated Spend</h5>
+                some text
+            </article>
+            <article>
+                <h5>Order History</h5>
+                some text
+            </article>
+            <article>
+                <h5>Random attachment</h5>
+                <img src="../assets/images/random-attachment.png" alt="random attachment" />
+            </article>
+        </div>
+        <div class="parent">
+            <h4>SO-20210700000</h4>
+            <article>
+                <h5>Estimated Delivery Date</h5>
+                some text
+            </article>
+            <article>
+                <h5>Estimated Spend</h5>
+                some text
+            </article>
+            <article>
+                <h5>Order History</h5>
+                some text
+            </article>
+            <article>
+                <h5>Random attachment</h5>
+                <img src="../assets/images/random-attachment.png" alt="random attachment" style="margin: -.5rem -1rem -1rem -1rem" />
+            </article>
+        </div>
+    </div>
+</section>
+
+<style>
+    h4, h5 { margin-top: 0; }
+    .parent {
+        display: inline-block;
+        padding: 1rem;
+        outline: 1px solid;
+    }
+
+    article {
+        padding: 1rem;
+        border-radius: .5rem;
+        border: 1px solid lightgray;
+        overflow: hidden;
+    }
+
+    article + article {
+        margin-top: 1rem;
+    }
+</style>
+
+<link rel="stylesheet" href="../style.css">

@@ -1,0 +1,48 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: system-ui;
+}
+
+:root {
+    --color-primary: #f5d67b;
+    --color-secondary: #72e0d1;
+}
+
+pre code {
+    padding: 1rem;
+    display: inline-block;
+    background-color: black;
+    border-radius: .5rem;
+    color: var(--color-primary);
+    font-weight: bold;;
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+    max-width: 100%;
+    min-width: 100px;
+}
+
+button {
+    font-weight: bold;
+    background-color: var(--color-primary);
+    color: black;
+    padding: .75rem 1.25rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    border: 0;
+}
+
+button:active {
+    transform: scale(.95)
+}
+
+button.gray {
+    background-color: lightgray;
+}
+
+hr {
+    margin: 3rem 0;
+}

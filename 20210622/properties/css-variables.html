@@ -1,0 +1,29 @@
+<div style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; align-items: center;">
+    <button class="gray" onclick="history.back()">Back</button>
+    <h2>CSS variables</h2>
+</div>
+
+<section>
+<pre><code><!--    
+--><span style="color: #72e0d1">:root</span> {
+    <span style="color: white">--whatever-name-you-want</span>: <span>block</span>;
+    <span style="color: white">--banana</span>: <span>blue</span>;
+}
+
+<span style="color: #72e0d1">.list</span> {
+    <span style="color: white">display</span>: <span>var(--whatever-name-you-want)</span>;
+    <span style="color: gray">/* display: block; */</span>
+    <span style="color: white">background-color</span>: <span>var(--banana)</span>;
+    <span style="color: gray">/* background-color: blue; */</span>
+
+    <span style="color: white">--item-color</span>: <span>yellow</span>;
+}
+
+<span style="color: #72e0d1">.list .list-item</span> {
+    <span style="color: white">color</span>: <span>var(--item-color)</span>;
+    <span style="color: gray">/* color: yellow; */</span>
+}
+</code></pre>
+</section>
+
+<link rel="stylesheet" href="../style.css">

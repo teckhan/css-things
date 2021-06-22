@@ -1,0 +1,127 @@
+<div style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; align-items: center;">
+    <button class="gray" onclick="history.back()">Back</button>
+    <h2>Box model</h2>
+</div>
+
+<article class="box-model">
+    <div>
+        margin
+        <div style="background-color: black; color: white;">
+            outline, box-shadow
+            <div style="background-color: var(--color-secondary)">
+                border
+                <div style="background-color: var(--color-primary)">
+                    padding
+                    <div  style="background-color: var(--color-primary)">
+                        content
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<p>
+    * content size = content + padding + border
+</p>
+
+<hr/>
+
+<section>
+    <h3>content</h3>
+    
+    <div class="box">some normal content</div>
+    <div class="box">some normal content</div>
+</section>
+
+<hr/>
+
+<section>
+    <h3>padding, border</h3>
+    <ul>
+        <li><strong>affect</strong> spaces in the element content</li>
+        <li><strong>does not affect</strong> spaces around element content</li>
+    </ul>
+    
+    <div class="box padding">some content with padding</div>
+    <div class="box">some normal content</div>
+
+    <p></p>
+
+    <div class="box border">some content with border</div>
+    <div class="box">some normal content</div>
+</section>
+
+<hr/>
+
+<section>
+    <h3>outline / box-shadow</h3>
+    <ul>
+        <li><strong>does not affect</strong> spaces in the element content</li>
+        <li><strong>does not affect</strong> spaces around element content</li>
+    </ul>
+
+    <div style="margin: 2rem 0">
+        <div class="box outline">some content with outline</div>
+        <div class="box">some normal content</div>
+    </div>
+
+    <div style="margin: 2rem 0">
+        <div class="box shadow">some content with shadow</div>
+        <div class="box">some normal content</div>
+    </div>
+</section>
+
+<hr/>
+
+<section>
+    <h3>margin</h3>
+    <ul>
+        <li><strong>does not affect</strong> spaces in the element content</li>
+        <li><strong>affect</strong> spaces around element content</li>
+    </ul>
+
+    <div class="box margin">some content with margin</div>
+    <div class="box">some normal content</div>
+</section>
+
+<style>
+    .box-model {
+        margin-top: 1rem;
+        width: 20rem;
+    }
+    .box-model div {
+        padding: 0 1rem 1rem 1rem;
+        outline: 1px solid black;
+        background-color: white;
+        color: black;
+    }
+
+    .box {
+        display: inline-block;
+        background-color: var(--color-primary);
+        outline: 1px solid black;
+    }
+
+    .padding {
+        padding: 1rem;
+    }
+
+    .border {
+        border: 1rem solid var(--color-secondary);
+    }
+
+    .outline {
+        outline: 15px solid black;
+    }
+
+    .shadow {
+        box-shadow: 0 0 15px 15px black;
+    }
+
+    .margin {
+        margin: 2rem;
+    }
+</style>
+
+<link rel="stylesheet" href="../style.css">

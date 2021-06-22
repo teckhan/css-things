@@ -1,0 +1,114 @@
+<div style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; align-items: center;">
+    <button class="gray" onclick="history.back()">Back</button>
+    <h2>Units</h2>
+</div>
+
+<p>Absolute unit: px, pt, cm, mm</p>
+<p>Intrinsic unit: auto, %, em, rem, ch, vw, vh, vmin, vmax</p>
+
+<hr/>
+
+<section x-data="{ blockChildrenPercentage: '100%', flexChildrenPercentage: '100%', gridChildrenPercentage: '100%' }">
+    <h3>% Percentage</h3>
+    <p><strong>Block (normal)</strong>: percentage of parent</p>
+    <div class="parent">
+        <div class="box" :style="`width: ${blockChildrenPercentage}`" x-text="blockChildrenPercentage"></div>
+    </div>
+    <p></p>
+    <button x-on:click="blockChildrenPercentage = '30%'">30%</button>
+    <button x-on:click="blockChildrenPercentage = '100%'">100%</button>
+
+    <p><strong>Flex</strong>: percentage as fraction</p>
+    <div class="parent percent-flex">
+        <div class="box" :style="`width: ${flexChildrenPercentage}`" x-text="flexChildrenPercentage"></div>
+        <div class="box" :style="`width: ${flexChildrenPercentage}`" x-text="flexChildrenPercentage"></div>
+        <div class="box" :style="`width: ${flexChildrenPercentage}`" x-text="flexChildrenPercentage"></div>
+        <div class="box" :style="`width: ${flexChildrenPercentage}`" x-text="flexChildrenPercentage"></div>
+        <div class="box" :style="`width: ${flexChildrenPercentage}`" x-text="flexChildrenPercentage"></div>
+    </div>
+    <p></p>
+    <div class="parent percent-flex">
+        <div class="box" :style="`width: 20%`">20%</div>
+        <div class="box" :style="`width: 40%`">40%</div>
+        <div class="box" :style="`width: 60%`">60%</div>
+        <div class="box" :style="`width: 80%`">80%</div>
+        <div class="box" :style="`width: 100%`">100%</div>
+    </div>
+    <p></p>
+    <button x-on:click="flexChildrenPercentage = '30%'">30%</button>
+    <button x-on:click="flexChildrenPercentage = '100%'">100%</button>
+
+    <p><strong>Grid</strong>: percentage of fraction</p>
+    <div class="parent percent-grid">
+        <div class="box" :style="`width: ${gridChildrenPercentage}`" x-text="gridChildrenPercentage"></div>
+        <div class="box" :style="`width: ${gridChildrenPercentage}`" x-text="gridChildrenPercentage"></div>
+        <div class="box" :style="`width: ${gridChildrenPercentage}`" x-text="gridChildrenPercentage"></div>
+        <div class="box" :style="`width: ${gridChildrenPercentage}`" x-text="gridChildrenPercentage"></div>
+        <div class="box" :style="`width: ${gridChildrenPercentage}`" x-text="gridChildrenPercentage"></div>
+    </div>
+    <p></p>
+    <button x-on:click="gridChildrenPercentage = '30%'">30%</button>
+    <button x-on:click="gridChildrenPercentage = '100%'">100%</button>
+</section>
+
+<hr/>
+
+<section x-data="{ parentFontSize: '16px' }">
+    <h3>em</h3>
+
+    <div class="parent parent-em-rem" :style="`font-size: ${parentFontSize}`">
+        <span x-text="parentFontSize"></span>
+        <div class="box" style="width: 5em"></div>
+    </div>
+
+    <p></p>
+    <button x-on:click="parentFontSize = '16px'">16px</button>
+    <button x-on:click="parentFontSize = '32px'">32px</button>
+</section>
+
+<hr/>
+
+<section x-data="{ parentFontSize: '16px' }">
+    <h3>(r)em</h3>
+
+    <div class="parent parent-em-rem" :style="`font-size: ${parentFontSize}`">
+        <span x-text="parentFontSize"></span>
+        <div class="box" style="width: 5rem"></div>
+    </div>
+
+    <p></p>
+    <button x-on:click="parentFontSize = '16px'">16px</button>
+    <button x-on:click="parentFontSize = '32px'">32px</button>
+</section>
+
+<style>
+    .parent {
+        outline: 1px solid black;
+    }
+
+    .box {
+        height: 5rem;
+        background-color: var(--color-secondary);
+        border-radius: .5rem;
+    }
+
+    .percent-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: .5rem;
+    }
+
+    .percent-flex {
+        display: flex;
+        gap: .5rem;
+    }
+
+    .parent-em-rem {
+        display: inline-block;
+        padding: 1rem;
+    }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine-ie11.min.js" integrity="sha512-Atu8sttM7mNNMon28+GHxLdz4Xo2APm1WVHwiLW9gW4bmHpHc/E2IbXrj98SmefTmbqbUTOztKl5PDPiu0LD/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<link rel="stylesheet" href="../style.css">
